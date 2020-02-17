@@ -1,0 +1,69 @@
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javanwew;
+import java.util.Scanner;
+/**
+ *
+ * @author test
+ */
+public class Javanwew {
+
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+       Scanner input = new Scanner(System.in);
+       double random_int = Math.random() * 26;
+       int ran2 = (int) random_int + 65;
+       char random_charactor = (char)ran2;
+       char predict;
+       boolean charles = true;
+       while(charles == true)
+           {
+       for(int i =0; i<5; i++){
+       System.out.println("Enter your prediction:");
+       predict = input.next().charAt(0);  
+            if(predict == random_charactor)
+            {
+                System.out.println("You win");
+                break;
+            }
+            else if(predict<random_charactor)
+            {
+                System.out.println("Your prediction is less ");
+               
+            }
+            else
+            {
+                System.out.println("Your prediction is greater");
+            }
+       }
+              System.out.println("The character was: " + random_charactor);
+        System.out.println("Do you want to play again?");
+        System.out.println("Y/N:");
+        predict = input.next().charAt(0);
+        if(predict == 'Y')
+        {
+          charles = true;
+        }
+        else if(predict == 'N' || predict == 'n')
+        {
+            charles = false;
+        }
+        else
+        {
+            System.out.println("Since you entered wrong input, we will play again!");
+        }
+           }
+
+       
+       
+    }
+    
+}
