@@ -1,0 +1,62 @@
+package oop.assignment;
+import java.util.Scanner;  
+
+public class OOPAssignment {
+     
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int decimal;
+        int binary;
+        char flag = 'g';
+        int i =1;
+        int size;
+        int num[] = new int[8];
+        int sum = 0;
+        int b_mod;
+        
+        while ( flag != 'b' || flag != 'B' || flag != 'D' || flag != 'd' )
+        {
+            System.out.println("Enter 'D' for Decimal to binary and 'B' for Binary to decimal conversion: ('E' to exit)");
+            flag = input.next().charAt(0);
+
+            if (flag == 'D' || flag == 'd')
+            {
+                System.out.println("enter number in decimal: ");
+                decimal = input.nextInt();
+                while(decimal != 1 )
+                {
+                    num[i] = decimal%2;
+                    decimal /=2;
+                    i++;
+                }
+                size = i;
+                num[size] = 1;
+                System.out.println("Binary of given decimal is: ");
+                for(int j = size; j> 0; j--)
+                    System.out.print(num[j]);
+                System.out.println(" ");
+            }
+            else if(flag == 'B' || flag == 'b')
+            {
+                int k =0;
+                System.out.println("enter number in binary: ");
+                binary = input.nextInt();
+
+                while(binary != 0)
+                {
+                    b_mod = binary % 10;
+                    sum = sum + b_mod * (int) Math.pow(2, k);
+                    binary /= 10;
+                    k++;
+                }
+                System.out.println("decimal of given binary number is : " + sum);
+            }
+            else if(flag == 'E' || flag == 'e')
+                break;
+            else
+                System.out.println("Wrong input! Enter again!");
+        }
+    }
+    
+}
