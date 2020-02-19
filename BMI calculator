@@ -1,0 +1,27 @@
+package oop.assignment;
+import java.util.Scanner;  
+
+public class OOPAssignment {
+     
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        double height;
+        double weight;
+        double BMI;
+        System.out.println("Enter weight in kilograms: ");
+        weight = input.nextDouble();
+        System.out.println("Enter weight in meters: ");
+        height = input.nextDouble();
+        BMI = weight / (height*height);
+        
+            if (BMI < 18.5)
+                System.out.println("Your are underweight, Go eat something!");
+            else if(BMI >= 18.5 && BMI < 25)
+                System.out.println("Your have normal weight, GREAT! :)");
+            else if(BMI >= 25 && BMI < 30)
+                System.out.println("Your are overweight, go out and excercise!");
+            else
+                System.out.println("Your are an Obese, control your eating dude!");
+    }
+}
