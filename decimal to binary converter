@@ -1,0 +1,45 @@
+package oop.assignment;
+import java.util.Scanner;  
+
+public class OOPAssignment {
+     
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int decimal = 30;
+        int binary;
+        char flag;
+        int i =1;
+        int size;
+        int num[] = new int[8];
+        
+        
+//        System.out.printf("Enter D for decimal to binary conversion and B for binary to decimal: ");
+//        flag = input.next().charAt(0);
+//        while(flag != 'd' || flag != 'D' || flag != 'B' || flag != 'b')
+//        {
+//            System.out.printf("Enter D for decimal to binary conversion and B for binary to decimal: ");
+//            flag = input.next().charAt(0);
+//            if (flag != 'd' || flag != 'D' || flag != 'B' || flag != 'b')
+//                System.out.println("WRONG INPUT");
+//        }
+//        if (flag == 'D' || flag == 'd')
+//        {
+//            System.out.println("enter number in decimal: ");
+//            decimal = input.nextInt();
+            while(decimal != 1 )
+            {
+                num[i] = decimal%2;
+                decimal /=2;
+                i++;
+            }
+            size = i;
+            num[size] = 1;
+            for(int j = size; j> 0; j--)
+                System.out.print(num[j]);
+        }
+        
+        
+     
+    
+}
