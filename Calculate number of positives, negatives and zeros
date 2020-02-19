@@ -1,0 +1,28 @@
+package oop.assignment;
+import java.util.Scanner;  
+
+public class OOPAssignment {
+     
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int number, i;
+        int negative_numbers =0 ;
+        int positive_numbers =0;
+        int number_of_zeros =0;
+        System.out.println("Enter 5 numbers here:- ");
+        for (i = 0; i<5; i++)
+        {
+            System.out.printf("Enter no. %d: \n", i+1);
+            number = input.nextInt();
+            if (number < 0)
+                negative_numbers++;
+            else if(number > 0)
+                positive_numbers ++;
+            else
+                number_of_zeros++;
+        }        
+        System.out.printf("Positive numbers are: %d\nNegative numbers are: %d\nZeros are: %d\n", positive_numbers, negative_numbers, number_of_zeros);
+     
+    }
+}
