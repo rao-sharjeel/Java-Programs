@@ -1,0 +1,29 @@
+package oop.assignment;
+//import RandomNumbers;
+import java.util.Scanner;  
+
+public class OOPAssignment {
+     
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       
+       double inflation;
+       int years;
+       double price;
+       double new_price;
+       
+       System.out.println("Enter Current Price : ");
+       price = input.nextDouble();
+       System.out.println("Enter Years after that purchase will be made : ");
+       years = input.nextInt();
+       System.out.println("Enter Inflation Rate : ");
+       inflation = input.nextDouble();
+       
+       new_price = ((inflation /100) * price)* years;
+       new_price = new_price + price;
+      
+        System.out.println("------------------------");
+        System.out.println("The Price after inflation will be : " + new_price);
+    }
+    
+}
