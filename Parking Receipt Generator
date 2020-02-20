@@ -1,0 +1,44 @@
+package oop.assignment;
+import java.util.Scanner;  
+
+public class OOPAssignment {
+     
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int decimal;
+        int binary;
+        char flag = 'g';
+        int i =1;
+        int parking_hours;
+        int num[] = new int[8];
+        int sum = 0;
+        int fees;
+        int cars;
+        
+       
+        System.out.println("Enter number of cars parked yesterday: ");
+        cars = input.nextInt();
+
+        for(i = 1; i<=cars; i++)
+            {
+                fees = 0;
+                System.out.println("enter number of parking hours for Customer " + i);
+                parking_hours = input.nextInt();
+                if(parking_hours <= 3)
+                    fees = 100;
+                else if(parking_hours > 3 && parking_hours <=5 )
+                    fees = 100 + (parking_hours-3) * 50;
+                else if(parking_hours > 5)
+                    fees = 200;
+                else
+                    System.out.println("Parking hours can't be negative.");
+                System.out.printf("paking charges for customer %d are Rs. %d\n", i, fees);
+                sum += fees;
+            }    
+        System.out.printf("--------------------------------\nTotal fees collected for %d customers is %d\n\n", cars, sum);
+            
+        
+    }
+    
+}
