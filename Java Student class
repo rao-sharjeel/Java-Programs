@@ -1,0 +1,26 @@
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Student std1 = new Student("rao", 19);
+	    int age = std1.get_dob();
+		System.out.println("the age is " + age);
+	}
+}
+
+////////////////////////////////////////////////
+
+public class Student
+{
+    String name;
+    int age;
+    public Student(String name, int age)
+    {
+        this.name = name;
+        this.age  = age;
+    }
+    public int get_dob()
+    {
+        return 2020 - age;
+    }
+}
